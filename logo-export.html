@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #000; display: flex; gap: 40px; padding: 40px; align-items: flex-start; }
+
+  .frame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #080B14;
+    flex-shrink: 0;
+  }
+
+  /* Version 1: Icon + Text side by side — 500x500 */
+  .v1 { width: 500px; height: 500px; }
+
+  /* Version 2: Icon only — 500x500 */
+  .v2 { width: 500px; height: 500px; }
+
+  /* Version 3: Text only — 500x500 */
+  .v3 { width: 500px; height: 500px; }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .logo-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 72px;
+    font-weight: 900;
+    letter-spacing: 0.22em;
+    color: #C9A84C;
+    line-height: 1;
+  }
+
+  .text-only {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 80px;
+    font-weight: 900;
+    letter-spacing: 0.28em;
+    color: #C9A84C;
+    line-height: 1;
+  }
+
+  .label {
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 13px;
+    margin-top: 8px;
+    text-align: center;
+    opacity: 0.5;
+  }
+
+  .col { display: flex; flex-direction: column; }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- VERSION 1: Logo mark + VANTG text -->
+  <div class="col">
+    <div class="frame v1">
+      <div class="logo">
+        <svg width="72" height="56" viewBox="0 0 36 28" fill="none">
+          <path d="M2 26L18 2L34 26" stroke="#C9A84C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M9 26L18 10L27 26" stroke="#C9A84C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.35"/>
+        </svg>
+        <span class="logo-text">VANTG</span>
+      </div>
+    </div>
+    <div class="label">Option 1 — Icon + Text</div>
+  </div>
+
+  <!-- VERSION 2: Icon only -->
+  <div class="col">
+    <div class="frame v2">
+      <svg width="160" height="124" viewBox="0 0 36 28" fill="none">
+        <path d="M2 26L18 2L34 26" stroke="#C9A84C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M9 26L18 10L27 26" stroke="#C9A84C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.35"/>
+      </svg>
+    </div>
+    <div class="label">Option 2 — Icon only</div>
+  </div>
+
+  <!-- VERSION 3: Text only -->
+  <div class="col">
+    <div class="frame v3">
+      <span class="text-only">VANTG</span>
+    </div>
+    <div class="label">Option 3 — Text only</div>
+  </div>
+
+</body>
+</html>

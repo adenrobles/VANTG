@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #111;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    gap: 12px;
+    padding: 40px;
+    font-family: sans-serif;
+  }
+
+  .label {
+    color: rgba(255,255,255,0.4);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* COVER: 1640 x 624 (2x for crisp upload) */
+  .cover {
+    width: 1640px;
+    height: 624px;
+    background: #080B14;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  /* Subtle grid lines */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+    background-size: 96px 96px;
+  }
+
+  /* Gold left accent bar */
+  .cover::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, transparent, #C9A84C, transparent);
+  }
+
+  /* Left content */
+  .cover-left {
+    position: relative;
+    z-index: 2;
+    padding: 0 0 0 112px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex: 1;
+  }
+
+  .cover-logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .cover-wordmark {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 96px;
+    font-weight: 900;
+    letter-spacing: 0.22em;
+    color: #C9A84C;
+    line-height: 1;
+  }
+
+  .cover-divider {
+    width: 96px;
+    height: 3px;
+    background: #C9A84C;
+    opacity: 0.5;
+  }
+
+  .cover-tagline {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(249,250,251,0.55);
+    line-height: 1.8;
+  }
+
+  .cover-tagline span {
+    color: rgba(249,250,251,0.9);
+  }
+
+  /* Right geometric visual */
+  .cover-right {
+    position: relative;
+    z-index: 2;
+    width: 640px;
+    height: 624px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  /* Fade overlay from left to transparent on right visual */
+  .cover-fade {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 80px;
+    background: linear-gradient(to right, #080B14, transparent);
+    z-index: 3;
+  }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="label">Facebook Cover Photo — 820 × 312px (screenshot this box exactly)</div>
+
+  <div class="cover">
+
+    <!-- Left: Logo + Tagline -->
+    <div class="cover-left">
+      <div class="cover-logo">
+        <svg width="104" height="80" viewBox="0 0 36 28" fill="none">
+          <path d="M2 26L18 2L34 26" stroke="#C9A84C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M9 26L18 10L27 26" stroke="#C9A84C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.35"/>
+        </svg>
+        <span class="cover-wordmark">VANTG</span>
+      </div>
+      <div class="cover-divider"></div>
+      <div class="cover-tagline">
+        <span>More Calls.</span> &nbsp;More Jobs. &nbsp;More Revenue.<br>
+        Meta Ads for Service Businesses · Ventura County, CA
+      </div>
+    </div>
+
+    <!-- Right: Geometric nested triangles -->
+    <div class="cover-right">
+      <div class="cover-fade"></div>
+      <svg viewBox="0 0 320 312" fill="none" width="640" height="624">
+        <!-- Nested triangles centered -->
+        <polygon points="160,20 300,280 20,280" stroke="#C9A84C" stroke-width="0.75" fill="none" opacity="0.07"/>
+        <polygon points="160,48 278,260 42,260" stroke="#C9A84C" stroke-width="0.75" fill="none" opacity="0.11"/>
+        <polygon points="160,76 256,240 64,240" stroke="#C9A84C" stroke-width="1" fill="none" opacity="0.18"/>
+        <polygon points="160,104 234,220 86,220" stroke="#C9A84C" stroke-width="1" fill="none" opacity="0.28"/>
+        <polygon points="160,132 212,200 108,200" stroke="#C9A84C" stroke-width="1.25" fill="none" opacity="0.44"/>
+        <polygon points="160,156 196,186 124,186" stroke="#C9A84C" stroke-width="1.5" fill="none" opacity="0.65"/>
+        <circle cx="160" cy="168" r="3.5" fill="#C9A84C" opacity="0.9"/>
+        <!-- Vertical dashed line -->
+        <line x1="160" y1="20" x2="160" y2="156" stroke="#C9A84C" stroke-width="0.75" opacity="0.1" stroke-dasharray="4 5"/>
+        <!-- Corner accents -->
+        <line x1="260" y1="40" x2="280" y2="40" stroke="#C9A84C" stroke-width="1" opacity="0.2"/>
+        <line x1="280" y1="40" x2="280" y2="60" stroke="#C9A84C" stroke-width="1" opacity="0.2"/>
+        <line x1="260" y1="272" x2="280" y2="272" stroke="#C9A84C" stroke-width="1" opacity="0.2"/>
+        <line x1="280" y1="252" x2="280" y2="272" stroke="#C9A84C" stroke-width="1" opacity="0.2"/>
+      </svg>
+    </div>
+
+  </div>
+
+  <div class="label">Take a screenshot of the dark box above — crop tightly to its edges</div>
+
+</body>
+</html>
