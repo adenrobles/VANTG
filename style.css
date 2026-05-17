@@ -261,6 +261,20 @@ section { padding: 7rem 0; }
   transform: translateY(-1px);
 }
 
+.nav-instagram {
+  display: flex;
+  align-items: center;
+  opacity: 0.75;
+  transition: opacity var(--transition), transform var(--transition);
+}
+
+.nav-instagram:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.nav-instagram::after { display: none !important; }
+
 /* Mobile Toggle */
 .nav-toggle {
   display: none;
